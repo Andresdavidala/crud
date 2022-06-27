@@ -14,6 +14,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import { GuardarUsuarioComponent } from './guardar-usuario/guardar-usuario.component';
+import { EmptyComponent } from './empty/empty.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { GuardarUsuarioComponent } from './guardar-usuario/guardar-usuario.compo
     AppComponent,
     DialogUserComponent,
     GuardarUsuarioComponent,
+    EmptyComponent,
 
   ],
   imports: [
@@ -37,7 +39,6 @@ import { GuardarUsuarioComponent } from './guardar-usuario/guardar-usuario.compo
     FormsModule,
     MatTableModule
   ],
-  entryComponents: [GuardarUsuarioComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

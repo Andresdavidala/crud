@@ -8,26 +8,33 @@ import { DialogUserComponent } from '../dialog-user/dialog-user.component';
 import { UsuarioService } from '../services/usuario.service';
 
 
+
 @Component({
   selector: 'app-guardar-usuario',
   templateUrl: './guardar-usuario.component.html',
   styleUrls: ['./guardar-usuario.component.css']
 })
+
 export class GuardarUsuarioComponent implements OnInit {
 
   listUsuario: Usuario[] = []
   displayedColumns: string[] = ['cedula', 'nombre', 'apellido', 'direccion', 'edad', "modificar"];
   //para llamar al matdialog
   dataSource = new MatTableDataSource<any>;
-  constructor(private usuerService: UsuarioService, public dialog: MatDialog, router:Router) {}
+  constructor(private usuerService: UsuarioService, public dialog: MatDialog) {}
   openDialog() {
   
     this.dialog.open(DialogUserComponent);
   }
 
+  closeDialog(){
+    this.dialog.closeAll()
+  }
+
   ngOnInit(): void {
     this.listUsuario = this.usuerService.getUsuario();
     this.dataSource = new MatTableDataSource(this.listUsuario);
+    
   }
   //↑
   
@@ -38,8 +45,9 @@ export class GuardarUsuarioComponent implements OnInit {
   editUsuario(element: any){
     this.dialog.open(DialogUserComponent,{
       data:element 
-    
+      
     })
+
      
   }
 

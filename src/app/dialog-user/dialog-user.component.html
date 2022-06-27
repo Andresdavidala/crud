@@ -1,5 +1,5 @@
 <h1 mat-dialog-title>Modificar Usuario</h1>
-<div mat-dialog-content>
+<div mat-dialog-content >
  
   <form [formGroup] = 'userForm'  class="example-form"  (ngSubmit)="agregarUsuario()">
 
@@ -30,7 +30,7 @@
 
     
     <div class="divBtnModificar">
-      <button type="submit" [disabled]="userForm.invalid" mat-raised-button color = "primary" (click)="cedula.value='';nombre.value='';apellido.value='';direccion.value='';edad.value='';">Guardar</button>
+      <button type="submit" [disabled]="userForm.invalid" mat-raised-button color = "primary"  (click)="closeDialog()" >{{actionBtn}}</button>
       <button style="margin-left: 8px;"  mat-raised-button color="warn"   mat-dialog-close >Cancelar</button>
   
     </div>
